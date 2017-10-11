@@ -1,0 +1,49 @@
+﻿@model List<DataAccess.Entities.Assignment>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <div class="pull-right" style="margin: 20px 0;">
+            <a href="#" class="btn btn-info">Add New</a>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        IsDone
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var assignment in Model)
+                {
+                    <tr>
+                        <td>@assignment.Title</td>
+                        <td>@assignment.Description</td>
+                        <td>@assignment.IsDone</td>
+                        <td>
+                            <a href="#" class="btn btn-warning">Update</a>
+                            <a href="#" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

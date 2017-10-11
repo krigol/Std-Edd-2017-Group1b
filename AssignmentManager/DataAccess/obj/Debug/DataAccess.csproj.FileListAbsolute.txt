@@ -1,0 +1,5 @@
+C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\DataAccess\obj\Debug\DataAccess.pdb

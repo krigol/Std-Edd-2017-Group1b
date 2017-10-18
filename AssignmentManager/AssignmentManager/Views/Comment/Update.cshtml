@@ -1,0 +1,27 @@
+﻿@model DataAccess.Entities.Comment
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Update</title>
+</head>
+<body>
+    <h1>Update</h1>
+    <div class="container">
+        @using (Html.BeginForm("Update", "Comment"))
+        {
+            @Html.HiddenFor(model => model.AssignmentId)
+            <div class="row">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Content)
+                    @Html.TextBoxFor(model => model.Content, new { @class = "form-control" })
+                </div>
+            </div>
+            <div>
+                <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+        }
+    </div>
+</body>
+</html>

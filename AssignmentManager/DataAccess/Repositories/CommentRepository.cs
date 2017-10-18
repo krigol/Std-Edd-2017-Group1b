@@ -32,10 +32,10 @@ namespace DataAccess.Repositories
 @"
 SELECT * 
 FROM Comments
-WHERE AssignmentId = @AssignmentId
+WHERE AssignementId = @AssignementId
 ";
                 var assignmentIdParam = command.CreateParameter();
-                assignmentIdParam.ParameterName = "@AssignmentId";
+                assignmentIdParam.ParameterName = "@AssignementId";
                 assignmentIdParam.Value = assignmentId;
                 command.Parameters.Add(assignmentIdParam);
 
@@ -47,7 +47,7 @@ WHERE AssignmentId = @AssignmentId
                         Comment comment = new Comment();
                         comment.Id = (int)reader["Id"];
                         comment.Content = (string)reader["Content"];
-                        comment.AssignmentId = (int)reader["AssignmentId"];
+                        comment.AssignmentId = (int)reader["AssignementId"];
 
                         comments.Add(comment);
                     }
@@ -66,16 +66,18 @@ WHERE AssignmentId = @AssignmentId
         {
             IDbConnection connection = new SqlConnection(dbConnectionString);
 
+            connection.Open();
+
             try 
 	        {
                 IDbCommand command = connection.CreateCommand();
                 command.CommandText =
 @"
-INSERT INTO Comments(AssignmentId, Content)
-VALUES (@AssignmentId,@Content)
+INSERT INTO Comments(AssignementId, Content)
+VALUES (@AssignementId,@Content)
 ";
                 IDataParameter assignmentIdParam = command.CreateParameter();
-                assignmentIdParam.ParameterName = "@AssignmentId";
+                assignmentIdParam.ParameterName = "@AssignementId";
                 assignmentIdParam.Value = entity.AssignmentId;
                 command.Parameters.Add(assignmentIdParam);
 
@@ -132,12 +134,13 @@ WHERE Id=@Id
                 command.CommandText =
 @"
 UPDATE Comments
-SET Content = @Content,
+SET Content = @Content
 WHERE Id = @Id
 ";
                 var contentParam = command.CreateParameter();
                 contentParam.ParameterName = "@Content";
                 contentParam.Value = entity.Content;
+                command.Parameters.Add(contentParam);
 
                 var idParam = command.CreateParameter();
                 idParam.ParameterName = "@Id";
@@ -180,7 +183,7 @@ WHERE Id = @Id
 
                     comment.Id = (int)reader["Id"];
                     comment.Content = (string)reader["Content"];
-                    comment.AssignmentId = (int)reader["AssignmentId"];
+                    comment.AssignmentId = (int)reader["AssignementId"];
 
                 }
             }

@@ -1,0 +1,41 @@
+﻿@model List<DataAccess.Entities.Comment>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <div class="pull-right" style="margin: 20px 0;">
+            <a href="/Comment/Insert/@ViewBag.AssignmentId" class="btn btn-info">Add New</a>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Content
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var comment in Model)
+                {
+                    <tr>
+                        <td>@comment.Content</td>
+                        <td>
+                            <a href="/Comment/Update/@comment.Id" class="btn btn-warning">Update</a>
+                            <a href="/Comment/Delete/@comment.Id" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

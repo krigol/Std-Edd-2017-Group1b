@@ -1,0 +1,38 @@
+﻿@model DataAccess.Entities.Assignment
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Update</title>
+</head>
+<body>
+    <h1>Update</h1>
+    <div class="container">
+        @using (Html.BeginForm("Update", "Assignment"))
+        {
+            <div class="row">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Title)
+                    @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description)
+                    @Html.TextAreaFor(model => model.Description, new { rows = "5", @class = "form-control" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.IsDone, "Is Complete")
+                    @Html.CheckBoxFor(model => model.IsDone)
+                </div>
+            </div>
+            <div>
+                <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+        }
+    </div>
+</body>
+</html>

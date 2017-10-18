@@ -25,5 +25,58 @@ namespace AssignmentManager.Controllers
 
             return View(assignments);
         }
+
+        [HttpGet]
+        public ActionResult Insert()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Insert(Assignment entity)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
+
+            AssignmentRepository assignmentRepository = new AssignmentRepository(connectionString);
+
+            assignmentRepository.Insert(entity); 
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Update(int id)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
+
+            AssignmentRepository assignmentRepository = new AssignmentRepository(connectionString);
+
+            var entity = assignmentRepository.GetById(id);
+
+            return View(entity);
+        }
+
+        [HttpPost]
+        public ActionResult Update(Assignment entity)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
+
+            AssignmentRepository assignmentRepository = new AssignmentRepository(connectionString);
+
+            assignmentRepository.Update(entity);
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Delete(int id)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
+
+            AssignmentRepository assignmentRepository = new AssignmentRepository(connectionString);
+
+            assignmentRepository.Delete(id);
+
+            return RedirectToAction("Index");
+        }
 	}
 }

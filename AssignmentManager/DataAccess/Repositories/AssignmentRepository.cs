@@ -61,7 +61,8 @@ FROM Assignments
         {
             IDbConnection connection = new SqlConnection(dbConnectionString);
 
-            using (connection)
+            connection.Open();
+            try 
             {
                 IDbCommand command = connection.CreateCommand();
                 command.CommandText =
@@ -86,13 +87,17 @@ VALUES (@Title,@Description,@IsDone)
 
                 command.ExecuteNonQuery();
             }
+            finally
+            {
+                connection.Close();
+            }
         }
 
         public void Delete(int id)
         {
             var connection = new SqlConnection(dbConnectionString);
-
-            using (connection)
+            connection.Open();
+            try 
             {
                 var command = connection.CreateCommand();
                 command.CommandText = 
@@ -107,6 +112,10 @@ WHERE Id=@Id
                 command.Parameters.Add(idParameter);
 
                 command.ExecuteNonQuery();
+            }
+            finally
+            {
+                connection.Close();
             }
         }
 

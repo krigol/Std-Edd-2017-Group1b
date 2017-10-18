@@ -15,7 +15,7 @@ CREATE TABLE [Comments]
 (
 	[Id] int IDENTITY(1,1) PRIMARY KEY,
 	[AssignementId] int NOT NULL FOREIGN KEY REFERENCES [Assignments] ([Id]),
-	[Content] VARCHAR(20) NOT NULL	
+	[Content] VARCHAR(200) NOT NULL	
 )
 
 GO

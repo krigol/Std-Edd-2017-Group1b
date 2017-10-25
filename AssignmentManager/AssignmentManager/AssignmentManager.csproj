@@ -163,9 +163,13 @@
     <Content Include="Views\Comment\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{65f02caf-74e3-43c3-866b-0eb2a8fd164c}</Project>
-      <Name>DataAccess</Name>
+    <ProjectReference Include="..\DataAccess.Entities\DataAccess.Entities.csproj">
+      <Project>{67e6406a-ed51-4122-aba8-38775a6b566d}</Project>
+      <Name>DataAccess.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess.EntityFramework\DataAccess.EntityFramework.csproj">
+      <Project>{26e6a0b1-b2c3-4c5f-a785-9f3bd764f3f1}</Project>
+      <Name>DataAccess.EntityFramework</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

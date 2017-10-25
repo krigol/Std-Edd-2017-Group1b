@@ -1,5 +1,5 @@
 ﻿using DataAccess.Entities;
-using DataAccess.Repositories;
+using DataAccess.EntityFramework.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -16,10 +16,12 @@ namespace AssignmentManager.Controllers
         public ActionResult Index()
         {
             List<Assignment> assignments = new List<Assignment>();
+            
+            //USED FOR ADO.NET not needed for Entity Framework
 
-            string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
+            //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
 
-            AssignmentRepository assignmentRepository = new AssignmentRepository(connectionString);
+            AssignmentRepository assignmentRepository = new AssignmentRepository();
 
             assignments = assignmentRepository.GetAll();
 
@@ -35,9 +37,11 @@ namespace AssignmentManager.Controllers
         [HttpPost]
         public ActionResult Insert(Assignment entity)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
+            //USED FOR ADO.NET not needed for Entity Framework
 
-            AssignmentRepository assignmentRepository = new AssignmentRepository(connectionString);
+            //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
+
+            AssignmentRepository assignmentRepository = new AssignmentRepository();
 
             assignmentRepository.Insert(entity); 
 
@@ -47,9 +51,11 @@ namespace AssignmentManager.Controllers
         [HttpGet]
         public ActionResult Update(int id)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
+            //USED FOR ADO.NET not needed for Entity Framework
 
-            AssignmentRepository assignmentRepository = new AssignmentRepository(connectionString);
+            //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
+
+            AssignmentRepository assignmentRepository = new AssignmentRepository();
 
             var entity = assignmentRepository.GetById(id);
 
@@ -59,9 +65,11 @@ namespace AssignmentManager.Controllers
         [HttpPost]
         public ActionResult Update(Assignment entity)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
+            //USED FOR ADO.NET not needed for Entity Framework
 
-            AssignmentRepository assignmentRepository = new AssignmentRepository(connectionString);
+            //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
+
+            AssignmentRepository assignmentRepository = new AssignmentRepository();
 
             assignmentRepository.Update(entity);
 
@@ -70,11 +78,13 @@ namespace AssignmentManager.Controllers
 
         public ActionResult Delete(int id)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
+            //USED FOR ADO.NET not needed for Entity Framework
 
-            AssignmentRepository assignmentRepository = new AssignmentRepository(connectionString);
+            //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
 
-            assignmentRepository.Delete(id);
+            AssignmentRepository assignmentRepository = new AssignmentRepository();
+            var entity = assignmentRepository.GetById(id);
+            assignmentRepository.Delete(entity);
 
             return RedirectToAction("Index");
         }

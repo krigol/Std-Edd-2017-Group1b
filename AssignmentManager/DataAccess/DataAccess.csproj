@@ -39,11 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Assignment.cs" />
-    <Compile Include="Entities\Comment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AssignmentRepository.cs" />
     <Compile Include="Repositories\CommentRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess.Entities\DataAccess.Entities.csproj">
+      <Project>{67e6406a-ed51-4122-aba8-38775a6b566d}</Project>
+      <Name>DataAccess.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

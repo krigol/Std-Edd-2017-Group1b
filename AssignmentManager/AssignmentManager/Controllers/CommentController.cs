@@ -1,5 +1,5 @@
 ﻿using DataAccess.Entities;
-using DataAccess.Repositories;
+using DataAccess.EntityFramework.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -17,11 +17,11 @@ namespace AssignmentManager.Controllers
         {
             List<Comment> comments = new List<Comment>();
 
-            string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
+            //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
 
-            CommentRepository commentRepository = new CommentRepository(connectionString);
+            CommentRepository commentRepository = new CommentRepository();
 
-            comments = commentRepository.GetAll(id);
+            comments = commentRepository.GetAll(comment => comment.AssignmentId == id);
 
             ViewBag.AssignmentId = id;
 
@@ -39,9 +39,9 @@ namespace AssignmentManager.Controllers
         [HttpPost]
         public ActionResult Insert(Comment entity)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
+            //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
 
-            CommentRepository commentRepository = new CommentRepository(connectionString);
+            CommentRepository commentRepository = new CommentRepository();
 
             commentRepository.Insert(entity);
 
@@ -51,9 +51,9 @@ namespace AssignmentManager.Controllers
         [HttpGet]
         public ActionResult Update(int id)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
+            //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
 
-            CommentRepository commentRepository = new CommentRepository(connectionString);
+            CommentRepository commentRepository = new CommentRepository();
 
             var entity = commentRepository.GetById(id);
 
@@ -63,9 +63,9 @@ namespace AssignmentManager.Controllers
         [HttpPost]
         public ActionResult Update(Comment entity)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
+            //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
 
-            CommentRepository commentRepository = new CommentRepository(connectionString);
+            CommentRepository commentRepository = new CommentRepository();
 
             commentRepository.Update(entity);
 
@@ -74,12 +74,12 @@ namespace AssignmentManager.Controllers
 
         public ActionResult Delete(int id)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
+            //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
 
-            CommentRepository commentRepository = new CommentRepository(connectionString);
+            CommentRepository commentRepository = new CommentRepository();
 
             var entity = commentRepository.GetById(id);
-            commentRepository.Delete(id);
+            commentRepository.Delete(entity);
 
             return RedirectToAction("Index/" + entity.AssignmentId);
         }

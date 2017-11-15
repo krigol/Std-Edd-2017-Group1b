@@ -1,4 +1,5 @@
-﻿using DataAccess.Entities;
+﻿using AssignmentManager.Models;
+using DataAccess.Entities;
 using DataAccess.EntityFramework.Repositories;
 using System;
 using System.Collections.Generic;
@@ -25,23 +26,40 @@ namespace AssignmentManager.Controllers
 
             ViewBag.AssignmentId = id;
 
-            return View(comments);
+            var model = new CommentListViewModel();
+
+            foreach (var comment in comments)
+            {
+                var tempModel = new CommentViewModel();
+                tempModel.Id = comment.Id;
+                tempModel.Content = comment.Content;
+                tempModel.AssignmentId = comment.AssignmentId;
+
+                model.Comments.Add(tempModel);
+            }
+
+            return View(model);
         }
 
         [HttpGet]
         public ActionResult Insert(int id)
         {
-            var entity = new Comment();
-            entity.AssignmentId = id;
-            return View(entity);
+            var model = new CommentViewModel();
+            model.AssignmentId = id;
+            return View(model);
         }
 
         [HttpPost]
-        public ActionResult Insert(Comment entity)
+        public ActionResult Insert(CommentViewModel model)
         {
             //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
 
             CommentRepository commentRepository = new CommentRepository();
+
+            var entity = new Comment();
+            entity.Id = model.Id;
+            entity.Content = model.Content;
+            entity.AssignmentId = model.AssignmentId;
 
             commentRepository.Insert(entity);
 
@@ -56,16 +74,25 @@ namespace AssignmentManager.Controllers
             CommentRepository commentRepository = new CommentRepository();
 
             var entity = commentRepository.GetById(id);
+            var model = new CommentViewModel();
+            model.Id = entity.Id;
+            model.Content = entity.Content;
+            model.AssignmentId = entity.AssignmentId;
 
-            return View(entity);
+            return View(model);
         }
 
         [HttpPost]
-        public ActionResult Update(Comment entity)
+        public ActionResult Update(CommentViewModel model)
         {
             //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
 
             CommentRepository commentRepository = new CommentRepository();
+
+            var entity = new Comment();
+            entity.Id = model.Id;
+            entity.Content = model.Content;
+            entity.AssignmentId = model.AssignmentId;
 
             commentRepository.Update(entity);
 

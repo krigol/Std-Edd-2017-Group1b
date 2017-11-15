@@ -1,4 +1,4 @@
-﻿@model List<DataAccess.Entities.Comment>
+﻿@model AssignmentManager.Models.CommentListViewModel
 
 <!DOCTYPE html>
 
@@ -24,7 +24,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var comment in Model)
+                @foreach (var comment in Model.Comments)
                 {
                     <tr>
                         <td>@comment.Content</td>

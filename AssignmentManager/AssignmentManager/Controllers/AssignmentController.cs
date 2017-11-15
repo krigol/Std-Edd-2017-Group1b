@@ -1,4 +1,5 @@
-﻿using DataAccess.Entities;
+﻿using AssignmentManager.Models;
+using DataAccess.Entities;
 using DataAccess.EntityFramework.Repositories;
 using System;
 using System.Collections.Generic;
@@ -25,7 +26,21 @@ namespace AssignmentManager.Controllers
 
             assignments = assignmentRepository.GetAll();
 
-            return View(assignments);
+            var model = new AssignmentListViewModel();
+            model.Title = "Assignment Manager List Screen";
+            
+            foreach (var assignment in assignments)
+            {
+                var tempModel = new AssignmentViewModel();
+                tempModel.Id = assignment.Id;
+                tempModel.Title = assignment.Title;
+                tempModel.Description = assignment.Description;
+                tempModel.IsDone = assignment.IsDone;
+
+                model.Assignments.Add(tempModel);
+            }
+
+            return View(model);
         }
 
         [HttpGet]
@@ -35,14 +50,25 @@ namespace AssignmentManager.Controllers
         }
 
         [HttpPost]
-        public ActionResult Insert(Assignment entity)
+        public ActionResult Insert(AssignmentViewModel model)
         {
             //USED FOR ADO.NET not needed for Entity Framework
 
             //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
 
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
             AssignmentRepository assignmentRepository = new AssignmentRepository();
 
+            var entity = new Assignment();
+
+            entity.Title = model.Title;
+            entity.Description = model.Description;
+            entity.IsDone = model.IsDone;
+            
             assignmentRepository.Insert(entity); 
 
             return RedirectToAction("Index");
@@ -59,18 +85,37 @@ namespace AssignmentManager.Controllers
 
             var entity = assignmentRepository.GetById(id);
 
-            return View(entity);
+            var model = new AssignmentViewModel 
+            {
+                Id = entity.Id,
+                Title = entity.Title,
+                Description = entity.Description,
+                IsDone = entity.IsDone
+            };
+
+            return View(model);
         }
 
         [HttpPost]
-        public ActionResult Update(Assignment entity)
+        public ActionResult Update(AssignmentViewModel model)
         {
             //USED FOR ADO.NET not needed for Entity Framework
 
             //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
 
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
             AssignmentRepository assignmentRepository = new AssignmentRepository();
 
+            var entity = assignmentRepository.GetById(model.Id);
+
+            entity.Title = model.Title;
+            entity.Description = model.Description;
+            entity.IsDone = model.IsDone;
+            
             assignmentRepository.Update(entity);
 
             return RedirectToAction("Index");

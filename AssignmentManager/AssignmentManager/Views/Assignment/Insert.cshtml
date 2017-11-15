@@ -1,4 +1,4 @@
-﻿@model DataAccess.Entities.Assignment
+﻿@model AssignmentManager.Models.AssignmentViewModel
 <!DOCTYPE html>
 
 <html>
@@ -11,6 +11,7 @@
     <div class="container"> 
         @using (Html.BeginForm("Insert","Assignment"))
         {
+            @Html.ValidationSummary();
            <div class="row">
                 <div class="form-group">
                     @Html.LabelFor(model => model.Title)

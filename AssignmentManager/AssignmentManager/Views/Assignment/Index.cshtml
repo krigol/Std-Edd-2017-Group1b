@@ -1,4 +1,4 @@
-﻿@model List<DataAccess.Entities.Assignment>
+﻿@model AssignmentManager.Models.AssignmentListViewModel
 
 <!DOCTYPE html>
 
@@ -9,6 +9,9 @@
 </head>
 <body>
     <div> 
+        <div class="pull-left">
+            <h1>@Model.Title</h1>
+        </div>
         <div class="pull-right" style="margin: 20px 0;">
             <a href="Assignment/Insert" class="btn btn-info">Add New</a>
         </div>
@@ -30,7 +33,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var assignment in Model)
+                @foreach (var assignment in Model.Assignments)
                 {
                     <tr>
                         <td>@assignment.Title</td>

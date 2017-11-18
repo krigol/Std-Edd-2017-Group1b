@@ -8,3 +8,14 @@ C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.En
 C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.Entities\bin\Debug\EntityFramework.xml
 C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.Entities\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.Entities\obj\Debug\DataAccess.Entities.csprojResolveAssemblyReference.cache
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.Entities\bin\Debug\DataAccess.Entities.dll.config
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.Entities\bin\Debug\DataAccess.Entities.dll
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.Entities\bin\Debug\DataAccess.Entities.pdb
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.Entities\bin\Debug\EntityFramework.dll
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.Entities\bin\Debug\EntityFramework.xml
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.Entities\obj\Debug\DataAccess.Entities.csprojResolveAssemblyReference.cache
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.Entities\obj\Debug\DataAccess.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.Entities\obj\Debug\DataAccess.Entities.dll
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.Entities\obj\Debug\DataAccess.Entities.pdb

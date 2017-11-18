@@ -56,3 +56,5 @@ C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\AssignmentMan
 C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\AssignmentManager\bin\EntityFramework.dll
 C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\AssignmentManager\bin\DataAccess.EntityFramework.pdb
 C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\AssignmentManager\bin\EntityFramework.xml
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\AssignmentManager\obj\Debug\AssignmentManager.csprojResolveAssemblyReference.cache
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\AssignmentManager\obj\Debug\AssignmentManager.csproj.CoreCompileInputs.cache

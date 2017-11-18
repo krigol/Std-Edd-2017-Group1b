@@ -5,15 +5,8 @@ using System.Web;
 
 namespace AssignmentManager.Models
 {
-    public class AssignmentListViewModel : BaseListViewModel
+    public class AssignmentListViewModel : BaseListViewModel<AssignmentViewModel>
     {
         public string Title { get; set; }
-
-        public List<AssignmentViewModel> Assignments { get; private set; }
-
-        public AssignmentListViewModel()
-        {
-            Assignments = new List<AssignmentViewModel>();
-        }
     }
 }

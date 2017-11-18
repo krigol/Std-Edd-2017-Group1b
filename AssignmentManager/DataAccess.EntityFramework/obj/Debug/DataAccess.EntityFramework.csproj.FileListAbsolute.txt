@@ -10,3 +10,17 @@ C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.En
 C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.EntityFramework\obj\Debug\DataAccess.EntityFramework.csprojResolveAssemblyReference.cache
 C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.EntityFramework\obj\Debug\DataAccess.EntityFramework.dll
 C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.EntityFramework\obj\Debug\DataAccess.EntityFramework.pdb
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.EntityFramework\bin\Debug\DataAccess.EntityFramework.dll.config
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.EntityFramework\bin\Debug\DataAccess.EntityFramework.dll
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.EntityFramework\bin\Debug\DataAccess.EntityFramework.pdb
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.EntityFramework\bin\Debug\DataAccess.Entities.dll
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.EntityFramework\bin\Debug\EntityFramework.dll
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.EntityFramework\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.EntityFramework\bin\Debug\DataAccess.Entities.pdb
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.EntityFramework\bin\Debug\DataAccess.Entities.dll.config
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.EntityFramework\bin\Debug\EntityFramework.xml
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.EntityFramework\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.EntityFramework\obj\Debug\DataAccess.EntityFramework.csprojResolveAssemblyReference.cache
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.EntityFramework\obj\Debug\DataAccess.EntityFramework.csproj.CoreCompileInputs.cache
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.EntityFramework\obj\Debug\DataAccess.EntityFramework.dll
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.EntityFramework\obj\Debug\DataAccess.EntityFramework.pdb

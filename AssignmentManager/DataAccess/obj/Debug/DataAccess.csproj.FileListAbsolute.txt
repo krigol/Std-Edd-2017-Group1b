@@ -5,3 +5,12 @@ C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\DataAccess\ob
 C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\DataAccess\obj\Debug\DataAccess.pdb
 C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\DataAccess\bin\Debug\DataAccess.Entities.dll
 C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\DataAccess\bin\Debug\DataAccess.Entities.pdb
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess\bin\Debug\DataAccess.Entities.dll
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess\bin\Debug\DataAccess.Entities.pdb
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess\bin\Debug\DataAccess.Entities.dll.config
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\Kris\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataAccess\obj\Debug\DataAccess.pdb

@@ -5,13 +5,7 @@ using System.Web;
 
 namespace AssignmentManager.Models
 {
-    public class CommentListViewModel : BaseListViewModel
+    public class CommentListViewModel : BaseListViewModel<CommentViewModel>
     {
-        public List<CommentViewModel> Comments { get; set; }
-
-        public CommentListViewModel()
-        {
-            Comments = new List<CommentViewModel>();
-        }
     }
 }

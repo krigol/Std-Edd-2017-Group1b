@@ -1,6 +1,7 @@
 ﻿using AssignmentManager.Models;
 using DataAccess.Entities;
 using DataAccess.EntityFramework.Repositories;
+using ServiceLayer;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -10,128 +11,46 @@ using System.Web.Mvc;
 
 namespace AssignmentManager.Controllers
 {
-    public class AssignmentController : Controller
+    public class AssignmentController : BaseController<Assignment, AssignmentViewModel, AssignmentListViewModel, AssignmentService>
     {
-        //
-        // GET: /Assignment/
-        public ActionResult Index()
+        public override BaseRepository<Assignment> GetRepository()
         {
-            List<Assignment> assignments = new List<Assignment>();
-            
-            //USED FOR ADO.NET not needed for Entity Framework
-
-            //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
-
-            AssignmentRepository assignmentRepository = new AssignmentRepository();
-
-            assignments = assignmentRepository.GetAll();
-
-            var model = new AssignmentListViewModel();
-            model.Title = "Assignment Manager List Screen";
-            
-            foreach (var assignment in assignments)
-            {
-                var tempModel = new AssignmentViewModel();
-                tempModel.Id = assignment.Id;
-                tempModel.Title = assignment.Title;
-                tempModel.Description = assignment.Description;
-                tempModel.IsDone = assignment.IsDone;
-
-                model.Assignments.Add(tempModel);
-            }
-
-            return View(model);
+            return new AssignmentRepository();
         }
 
-        [HttpGet]
-        public ActionResult Insert()
+        public override AssignmentViewModel GetViewModel()
         {
-            return View();
+            return new AssignmentViewModel();
         }
 
-        [HttpPost]
-        public ActionResult Insert(AssignmentViewModel model)
+        public override Assignment GetEntity()
         {
-            //USED FOR ADO.NET not needed for Entity Framework
-
-            //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
-
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-
-            AssignmentRepository assignmentRepository = new AssignmentRepository();
-
-            var entity = new Assignment();
-
-            entity.Title = model.Title;
-            entity.Description = model.Description;
-            entity.IsDone = model.IsDone;
-            
-            assignmentRepository.Insert(entity); 
-
-            return RedirectToAction("Index");
+            return new Assignment();
         }
 
-        [HttpGet]
-        public ActionResult Update(int id)
+        public override void MapEntityToViewModel(Assignment entity, AssignmentViewModel viewModel)
         {
-            //USED FOR ADO.NET not needed for Entity Framework
-
-            //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
-
-            AssignmentRepository assignmentRepository = new AssignmentRepository();
-
-            var entity = assignmentRepository.GetById(id);
-
-            var model = new AssignmentViewModel 
-            {
-                Id = entity.Id,
-                Title = entity.Title,
-                Description = entity.Description,
-                IsDone = entity.IsDone
-            };
-
-            return View(model);
+            viewModel.Id = entity.Id;
+            viewModel.Title = entity.Title;
+            viewModel.Description = entity.Description;
+            viewModel.IsDone = entity.IsDone;
         }
 
-        [HttpPost]
-        public ActionResult Update(AssignmentViewModel model)
+        public override void MapViewModelToEntity(AssignmentViewModel viewModel, Assignment entity)
         {
-            //USED FOR ADO.NET not needed for Entity Framework
-
-            //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
-
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-
-            AssignmentRepository assignmentRepository = new AssignmentRepository();
-
-            var entity = assignmentRepository.GetById(model.Id);
-
-            entity.Title = model.Title;
-            entity.Description = model.Description;
-            entity.IsDone = model.IsDone;
-            
-            assignmentRepository.Update(entity);
-
-            return RedirectToAction("Index");
+            entity.Title = viewModel.Title;
+            entity.Description = viewModel.Description;
+            entity.IsDone = viewModel.IsDone;
         }
 
-        public ActionResult Delete(int id)
+        public override string GetRedirectUrl(Assignment entity)
         {
-            //USED FOR ADO.NET not needed for Entity Framework
-
-            //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
-
-            AssignmentRepository assignmentRepository = new AssignmentRepository();
-            var entity = assignmentRepository.GetById(id);
-            assignmentRepository.Delete(entity);
-
-            return RedirectToAction("Index");
+            return "Index";
         }
-	}
+
+        public override void OnBeforeList(AssignmentListViewModel viewModel, int? id)
+        {
+            viewModel.Title = "Assignment Manager List Screen";
+        }
+    }
 }

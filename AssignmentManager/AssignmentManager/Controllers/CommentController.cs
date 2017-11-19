@@ -1,114 +1,72 @@
 ﻿using AssignmentManager.Models;
 using DataAccess.Entities;
 using DataAccess.EntityFramework.Repositories;
+using ServiceLayer;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Web;
 using System.Web.Mvc;
 
 namespace AssignmentManager.Controllers
 {
-    public class CommentController : Controller
+    public class CommentController : BaseController<Comment, CommentViewModel, CommentListViewModel, CommentService>
     {
-        //
-        // GET: /Comment/
-        public ActionResult Index(int id)
+        public override void OnBeforeList(CommentListViewModel model, int? id)
         {
-            List<Comment> comments = new List<Comment>();
-
-            //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
-
-            CommentRepository commentRepository = new CommentRepository();
-
-            comments = commentRepository.GetAll(comment => comment.AssignmentId == id);
-
-            ViewBag.AssignmentId = id;
-
-            var model = new CommentListViewModel();
-
-            foreach (var comment in comments)
+            if (id.HasValue)
             {
-                var tempModel = new CommentViewModel();
-                tempModel.Id = comment.Id;
-                tempModel.Content = comment.Content;
-                tempModel.AssignmentId = comment.AssignmentId;
-
-                model.Comments.Add(tempModel);
+                model.AssignmentId = id.Value;
             }
-
-            return View(model);
         }
 
-        [HttpGet]
-        public ActionResult Insert(int id)
+        public override Expression<Func<Comment, bool>> GetGetAllFilter(CommentListViewModel model)
         {
-            var model = new CommentViewModel();
-            model.AssignmentId = id;
-            return View(model);
+            return x => x.AssignmentId == model.AssignmentId;
         }
 
-        [HttpPost]
-        public ActionResult Insert(CommentViewModel model)
+        public override void OnBeforeInsert(CommentViewModel viewModel, int? id)
         {
-            //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
+            if (id.HasValue)
+            {
+                viewModel.AssignmentId = id.Value;
 
-            CommentRepository commentRepository = new CommentRepository();
-
-            var entity = new Comment();
-            entity.Id = model.Id;
-            entity.Content = model.Content;
-            entity.AssignmentId = model.AssignmentId;
-
-            commentRepository.Insert(entity);
-
-            return RedirectToAction("Index/"+ entity.AssignmentId);
+            }
         }
 
-        [HttpGet]
-        public ActionResult Update(int id)
+        public override BaseRepository<Comment> GetRepository()
         {
-            //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
-
-            CommentRepository commentRepository = new CommentRepository();
-
-            var entity = commentRepository.GetById(id);
-            var model = new CommentViewModel();
-            model.Id = entity.Id;
-            model.Content = entity.Content;
-            model.AssignmentId = entity.AssignmentId;
-
-            return View(model);
+            return new CommentRepository();
         }
 
-        [HttpPost]
-        public ActionResult Update(CommentViewModel model)
+        public override CommentViewModel GetViewModel()
         {
-            //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
-
-            CommentRepository commentRepository = new CommentRepository();
-
-            var entity = new Comment();
-            entity.Id = model.Id;
-            entity.Content = model.Content;
-            entity.AssignmentId = model.AssignmentId;
-
-            commentRepository.Update(entity);
-
-            return RedirectToAction("Index/"+entity.AssignmentId);
+            return new CommentViewModel();
         }
 
-        public ActionResult Delete(int id)
+        public override Comment GetEntity()
         {
-            //string connectionString = ConfigurationManager.ConnectionStrings["AssignmentManagerDbConnectionString"].ConnectionString;
-
-            CommentRepository commentRepository = new CommentRepository();
-
-            var entity = commentRepository.GetById(id);
-            commentRepository.Delete(entity);
-
-            return RedirectToAction("Index/" + entity.AssignmentId);
+            return new Comment();
         }
-	}
+
+        public override void MapEntityToViewModel(Comment entity, CommentViewModel viewModel)
+        {
+            viewModel.Id = entity.Id;
+            viewModel.AssignmentId = entity.AssignmentId;
+            viewModel.Content = entity.Content;
+        }
+
+        public override void MapViewModelToEntity(CommentViewModel viewModel, Comment entity)
+        {
+            entity.Content = viewModel.Content;
+            entity.AssignmentId = viewModel.AssignmentId;
+        }
+
+        public override string GetRedirectUrl(Comment entity)
+        {
+            return string.Format("Index/{0}", entity.AssignmentId);
+        }
+    }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.EntityFramework.Repositories
 {
-    public class BaseRepository<T> 
+    public abstract class BaseRepository<T> 
         where T : BaseEntity
     {
         private AssignmentManagerDbContext context;

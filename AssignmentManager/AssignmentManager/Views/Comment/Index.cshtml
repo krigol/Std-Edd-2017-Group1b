@@ -10,7 +10,7 @@
 <body>
     <div>
         <div class="pull-right" style="margin: 20px 0;">
-            <a href="/Comment/Insert/@ViewBag.AssignmentId" class="btn btn-info">Add New</a>
+            <a href="/Comment/Insert/@Model.AssignmentId" class="btn btn-info">Add New</a>
         </div>
         <table class="table table-bordered">
             <thead>
@@ -24,7 +24,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var comment in Model.Comments)
+                @foreach (var comment in Model.EntryList)
                 {
                     <tr>
                         <td>@comment.Content</td>

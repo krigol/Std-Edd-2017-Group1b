@@ -115,6 +115,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AssignementService.cs" />
     <Compile Include="Controllers\AssignmentController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
@@ -177,6 +178,10 @@
     <ProjectReference Include="..\DataAccess.EntityFramework\DataAccess.EntityFramework.csproj">
       <Project>{26e6a0b1-b2c3-4c5f-a785-9f3bd764f3f1}</Project>
       <Name>DataAccess.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceLayer\ServiceLayer.csproj">
+      <Project>{18b40c82-40c7-4929-9984-4cab44bb8782}</Project>
+      <Name>ServiceLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

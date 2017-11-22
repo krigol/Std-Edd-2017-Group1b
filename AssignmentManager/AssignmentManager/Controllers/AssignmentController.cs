@@ -34,6 +34,7 @@ namespace AssignmentManager.Controllers
             viewModel.Title = entity.Title;
             viewModel.Description = entity.Description;
             viewModel.IsDone = entity.IsDone;
+            viewModel.DueDate = entity.DueDate;
         }
 
         public override void MapViewModelToEntity(AssignmentViewModel viewModel, Assignment entity)
@@ -41,6 +42,7 @@ namespace AssignmentManager.Controllers
             entity.Title = viewModel.Title;
             entity.Description = viewModel.Description;
             entity.IsDone = viewModel.IsDone;
+            entity.DueDate = viewModel.DueDate;
         }
 
         public override string GetRedirectUrl(Assignment entity)
@@ -51,6 +53,20 @@ namespace AssignmentManager.Controllers
         public override void OnBeforeList(AssignmentListViewModel viewModel, int? id)
         {
             viewModel.Title = "Assignment Manager List Screen";
+        }
+
+        public ActionResult Details(int id)
+        {
+            var service = new AssignmentService(new AssignmentRepository());
+            var detailsDto = service.GetDetails(id);
+
+            var viewModel = new AssignmentDetailsViewModel
+            {
+                DaysLeft = detailsDto.DaysLeft,
+                DueDate = detailsDto.DueDate
+            };
+
+            return View(viewModel);
         }
     }
 }

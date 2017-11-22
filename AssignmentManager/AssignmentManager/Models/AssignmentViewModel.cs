@@ -15,5 +15,12 @@ namespace AssignmentManager.Models
         public string Description { get; set; }
 
         public bool IsDone { get; set; }
+
+        public DateTime DueDate { get; set; }
+
+        public AssignmentViewModel()
+        {
+            DueDate = DateTime.Now.AddDays(7);
+        }
     }
 }

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.EntityFramework"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLayer", "ServiceLayer\ServiceLayer.csproj", "{18B40C82-40C7-4929-9984-4CAB44BB8782}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataContracts", "DataContracts\DataContracts.csproj", "{70F7C64C-1FEE-4855-936A-9AA4E36025E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{18B40C82-40C7-4929-9984-4CAB44BB8782}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18B40C82-40C7-4929-9984-4CAB44BB8782}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18B40C82-40C7-4929-9984-4CAB44BB8782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70F7C64C-1FEE-4855-936A-9AA4E36025E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70F7C64C-1FEE-4855-936A-9AA4E36025E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70F7C64C-1FEE-4855-936A-9AA4E36025E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70F7C64C-1FEE-4855-936A-9AA4E36025E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

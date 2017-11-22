@@ -1,0 +1,18 @@
+﻿@model AssignmentManager.Models.AssignmentDetailsViewModel
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h2>Your assignment is due on @Model.DueDate</h2>
+</div>
+
+<div>
+    @{
+        var style = Model.DaysLeft <= 0 ? "style=color:red" : "style=color:green";
+    }
+    <h1 @style>Days Left: @Model.DaysLeft</h1>
+</div>
+

@@ -12,8 +12,8 @@ namespace DataAccess.EntityFramework.Repositories
     public abstract class BaseRepository<T> 
         where T : BaseEntity
     {
-        private AssignmentManagerDbContext context;
-        private DbSet<T> dbSet;
+        protected AssignmentManagerDbContext context;
+        protected DbSet<T> dbSet;
 
         public BaseRepository()
         {

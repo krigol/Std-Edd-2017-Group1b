@@ -17,7 +17,7 @@ namespace AssignmentManager.Controllers
         where TListViewModel : BaseListViewModel<TViewModel>, new()
         where TService : BaseService<TEntity>
     {
-        private BaseService<TEntity> _service;
+        protected BaseService<TEntity> _service;
 
         public BaseController()
         {

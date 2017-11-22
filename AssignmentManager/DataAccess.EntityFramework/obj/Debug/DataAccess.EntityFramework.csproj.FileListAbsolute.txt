@@ -22,3 +22,5 @@ C:\Users\fmi\Desktop\edd\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.Entit
 C:\Users\fmi\Desktop\edd\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.EntityFramework\obj\Debug\DataAccess.EntityFramework.csprojResolveAssemblyReference.cache
 C:\Users\fmi\Desktop\edd\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.EntityFramework\obj\Debug\DataAccess.EntityFramework.dll
 C:\Users\fmi\Desktop\edd\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.EntityFramework\obj\Debug\DataAccess.EntityFramework.pdb
+C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.EntityFramework\bin\Debug\DataContracts.dll
+C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\DataAccess.EntityFramework\bin\Debug\DataContracts.pdb

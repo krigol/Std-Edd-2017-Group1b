@@ -15,6 +15,8 @@ namespace DataAccess.Entities
 
         public bool IsDone { get; set; }
 
+        public DateTime DueDate { get; set; }
+
         public virtual List<Comment> Comments { get; set; }
     }
 }

@@ -24,6 +24,12 @@
                     @Html.TextAreaFor(model => model.Description, new { rows="5", @class="form-control" })
                 </div>
             </div> 
+            <div class="row">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.DueDate)
+                    @Html.TextBoxFor(model => model.DueDate, new { @class = "form-control" })
+                </div>
+            </div> 
             <div>
                 <input type="submit" value="Save" class="btn btn-success"/>
             </div>

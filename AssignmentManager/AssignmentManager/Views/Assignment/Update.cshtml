@@ -27,6 +27,12 @@
             </div>
             <div class="row">
                 <div class="form-group">
+                    @Html.LabelFor(model => model.DueDate)
+                    @Html.TextBoxFor(model => model.DueDate, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
                     @Html.LabelFor(model => model.IsDone, "Is Complete")
                     @Html.CheckBoxFor(model => model.IsDone)
                 </div>

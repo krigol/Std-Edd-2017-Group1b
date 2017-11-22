@@ -115,7 +115,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AssignementService.cs" />
     <Compile Include="Controllers\AssignmentController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
@@ -123,6 +122,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AssignmentDetailsViewModel.cs" />
     <Compile Include="Models\AssignmentListViewModel.cs" />
     <Compile Include="Models\AssignmentViewModel.cs" />
     <Compile Include="Models\BaseListViewModel.cs" />
@@ -169,6 +169,7 @@
     <Content Include="Views\Comment\Index.cshtml" />
     <Content Include="Views\Comment\Insert.cshtml" />
     <Content Include="Views\Comment\Update.cshtml" />
+    <Content Include="Views\Assignment\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess.Entities\DataAccess.Entities.csproj">
@@ -178,6 +179,10 @@
     <ProjectReference Include="..\DataAccess.EntityFramework\DataAccess.EntityFramework.csproj">
       <Project>{26e6a0b1-b2c3-4c5f-a785-9f3bd764f3f1}</Project>
       <Name>DataAccess.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataContracts\DataContracts.csproj">
+      <Project>{70f7c64c-1fee-4855-936a-9aa4e36025e5}</Project>
+      <Name>DataContracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\ServiceLayer\ServiceLayer.csproj">
       <Project>{18b40c82-40c7-4929-9984-4cab44bb8782}</Project>

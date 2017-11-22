@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.EntityFramework
 {
-    class AssignmentManagerDbContext : DbContext
+    public class AssignmentManagerDbContext : DbContext
     {
         public DbSet<Assignment> Assignments { get; set; }
 

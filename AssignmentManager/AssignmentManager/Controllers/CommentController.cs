@@ -33,6 +33,19 @@ namespace AssignmentManager.Controllers
             {
                 viewModel.AssignmentId = id.Value;
 
+                //EXAMPLE CODE FOR DROPDOWNS
+                viewModel.AssignmentList = new List<SelectListItem>();
+
+                AssignmentRepository repo = new AssignmentRepository();
+                var allAssignments = repo.GetAll();
+
+                foreach (var assignment in allAssignments)
+                {
+                    var selectListItem = new SelectListItem();
+                    selectListItem.Text = assignment.Title;
+                    selectListItem.Value = assignment.Id.ToString();
+                    viewModel.AssignmentList.Add(selectListItem);
+                }
             }
         }
 

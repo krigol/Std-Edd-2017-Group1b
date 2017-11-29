@@ -3,3 +3,8 @@ C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\DataContracts
 C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\DataContracts\obj\Debug\DataContracts.csprojResolveAssemblyReference.cache
 C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\DataContracts\obj\Debug\DataContracts.dll
 C:\Users\fmi\Desktop\edd\1b\Std-Edd-2017-Group1b\AssignmentManager\DataContracts\obj\Debug\DataContracts.pdb
+C:\Users\fmi\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataContracts\bin\Debug\DataContracts.dll
+C:\Users\fmi\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataContracts\bin\Debug\DataContracts.pdb
+C:\Users\fmi\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataContracts\obj\Debug\DataContracts.csprojResolveAssemblyReference.cache
+C:\Users\fmi\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataContracts\obj\Debug\DataContracts.dll
+C:\Users\fmi\Desktop\Std-Edd-2017-Group1b\AssignmentManager\DataContracts\obj\Debug\DataContracts.pdb

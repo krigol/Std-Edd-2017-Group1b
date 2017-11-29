@@ -18,6 +18,12 @@
                     @Html.TextBoxFor(model => model.Content, new { @class = "form-control" })
                 </div>
             </div>
+            <div class="row">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AssignmentDropdownId)
+                    @Html.DropDownListFor(model => model.AssignmentDropdownId, Model.AssignmentList, new { @class = "form-control" })
+                </div>
+            </div>
             <div>
                 <input type="submit" value="Save" class="btn btn-success" />
             </div>
